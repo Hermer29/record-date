@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    Нажмите чтобы выбирать дату и время
+    <br>
+    <input id="date-input" type="datetime-local">
+    <button id="submit">Подтвердить</button>
+</body>
+
+<script>
+    var submitButton = document.querySelector("#submit");   
+    var dateInput = document.querySelector("#date-input");   
+
+    submitButton.addEventListener("click", function () {
+        window.Telegram.WebApp.sendData(dateInput.value);
+    });
+</script>
