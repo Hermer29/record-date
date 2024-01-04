@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<head>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-</head>
-<body>
-    Нажмите чтобы выбирать дату и время
-    <br>
-    <input id="date-input" type="datetime-local">
-    <button id="submit">Подтвердить</button>
-</body>
+<html>
+    <head>
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    </head>
+    <body>
+        Нажмите чтобы выбирать дату и время
+        <br>
+        <input id="date-input" type="datetime-local">
+        <button id="submit">Подтвердить</button>
+    </body>
+</html>
+
 
 <script>
     var submitButton = document.querySelector("#submit");   
@@ -15,6 +18,9 @@
 
     submitButton.addEventListener("click", function () {
         console.log("submit button clicked");
-        window.Telegram.WebApp.sendData(dateInput.value);
+        var dataToSend = {
+            date: dateInput.value
+        };
+        window.Telegram.WebApp.sendData(dataToSend);
     });
 </script>
