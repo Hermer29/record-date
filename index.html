@@ -18,9 +18,6 @@
 
     submitButton.addEventListener("click", function () {
         console.log("submit button clicked");
-        var dataToSend = {
-            date: dateInput.value
-        };
-        window.Telegram.WebApp.sendData(dataToSend);
+        window.Telegram.WebApp.sendData(dateInput.value);
     });
 </script>
